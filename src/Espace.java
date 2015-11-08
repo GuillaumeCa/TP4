@@ -14,7 +14,7 @@ public class Espace {
 	// methods
 	
 	public Espace() {
-		g = 3.81;
+		g = 9.81;
 		dt = 0.016;
 		Xmin = 0;
 		Xmax = 20;
@@ -22,12 +22,12 @@ public class Espace {
 		Ymax = 20;
 		balles = new Balle[1];
 	}
-	
+
 	public void distance(Balle B, Balle[] balles) {
 		for (Balle b: balles) {
 			double distx = b.px-B.px;
 			double disty = b.py-B.py;
-	        if (Math.pow(distx, 2)+Math.pow(disty, 2) <= Math.pow(b.rayon + B.rayon,2)) {
+	        if (Math.pow(distx, 2)+Math.pow(disty, 2) < Math.pow(b.rayon + B.rayon,2)) {
 	        	B.vx = -B.vx;
 				B.vy = -B.vy;
 			}

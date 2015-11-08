@@ -6,7 +6,6 @@ public class Balle {
 	double vx, vy;
 	double rayon;
 	double rebond;
-	double frottement;
 	Color color;
 
 	
@@ -38,10 +37,6 @@ public class Balle {
 		py = py - vy * esp.getDt() - 0.5 * esp.getG() * esp.getDt();
 		px = px + vx * esp.getDt();
 		
-		if (px == 0) {
-			vy = vy * frottement;
-			
-		}
 		
 		if (px > esp.getXmax() - rayon) {
 			px = esp.getXmax() - rayon;
